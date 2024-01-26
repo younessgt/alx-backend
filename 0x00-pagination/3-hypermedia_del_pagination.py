@@ -40,7 +40,8 @@ class Server:
         return self.__indexed_dataset
 
     def get_hyper_index(self, index: int = None, page_size: int = 10) -> dict:
-        """"""
+        """ function that return data without messing items from dataset
+        for example if some rows are removed"""
         dict_data = self.indexed_dataset()
         dataset_size = len(dict_data)
         x = True
