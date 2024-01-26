@@ -48,7 +48,7 @@ class Server:
         assert 0 <= index < dataset_size
         next_index = min(index + page_size, dataset_size)
         index_2 = index
-        while x:
+        while track_index:
             try:
                 data = [dict_data[i] for i in range(index_2, next_index)]
                 track_index = False
