@@ -69,6 +69,6 @@ class Server:
         else:
             dic['prev_page'] = page - 1
 
-        dic['total_pages'] = math.ceil(len(data_list) / page_size)
+        dic['total_pages'] = math.ceil(len(self.dataset()) / page_size)
         dic['page'] = page
         return dic
