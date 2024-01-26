@@ -50,7 +50,7 @@ class Server:
         return rows
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
-        """"""
+        """ returning a dictionary of pagination data"""
         dic = {}
         data_list = self.get_page(page, page_size)
 
