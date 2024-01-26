@@ -49,7 +49,7 @@ class Server:
         rows = list_dataset[indexes[0]: indexes[1]]
         return rows
 
-    def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
+    def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
         """ returning a dictionary of pagination data"""
         new_dict: Dict[Any, Any] = {}
         data_list = self.get_page(page, page_size)
