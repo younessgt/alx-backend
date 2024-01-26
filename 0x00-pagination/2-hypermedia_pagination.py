@@ -59,7 +59,7 @@ class Server:
         new_dict['data'] = data_list
         new_dict['total_pages'] = math.ceil(len(self.dataset()) / page_size)
 
-        if page > new_dict['total_pages']:
+        if len(data_list) == 0:
             new_dict['next_page'] = None
         else:
             new_dict['next_page'] = page + 1
