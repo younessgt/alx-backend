@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """ script that contain index_range function """
-from typing import Dict, Tuple
+from typing import Dict, Tuple, Any
 import csv
 import math
 from typing import List
@@ -51,24 +51,24 @@ class Server:
 
     def get_hyper(self, page: int = 1, page_size: int = 10) -> Dict:
         """ returning a dictionary of pagination data"""
-        dic = {}
+        new_dict: Dict[Any, Any] = {}
         data_list = self.get_page(page, page_size)
 
-        dic['page_size'] = len(data_list)
+        new_dict['page_size'] = len(data_list)
 
         if len(data_list) == 0:
-            dic['next_page'] = None
+            new_dict['next_page'] = None
 
         else:
-            dic['next_page'] = page + 1
+            new_dict['next_page'] = page + 1
 
-        dic['data'] = data_list
+        new_dict['data'] = data_list
 
         if (page == 1):
-            dic['prev_page'] = None
+            new_dict['prev_page'] = None
         else:
-            dic['prev_page'] = page - 1
+            new_dict['prev_page'] = page - 1
 
-        dic['total_pages'] = math.ceil(len(self.dataset()) / page_size)
-        dic['page'] = page
-        return dic
+        new_dict['total_pages'] = math.ceil(len(self.dataset()) / page_size)
+        new_dict['page'] = page
+        return new_dict
