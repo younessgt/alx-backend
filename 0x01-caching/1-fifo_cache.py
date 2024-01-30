@@ -5,7 +5,8 @@ BaseCaching = __import__('base_caching').BaseCaching
 
 
 class FIFOCache(BaseCaching):
-    """"""
+    """ class using put and get method to retrieve
+    and put and item to cache using FIFO algo (in put method)"""
 
     def __init__(self):
         """ constructor method"""
@@ -15,9 +16,9 @@ class FIFOCache(BaseCaching):
         """add an item to cache"""
         if key is not None and item is not None:
             if len(self.cache_data) > BaseCaching.MAX_ITEMS:
-                key, value = next(iter(self.cache_data))
-                print(f"DISCARD: {key}")
-                self.cache_data.pop(key)
+                key0, value0 = next(iter(self.cache_data))
+                print(f"DISCARD: {key0}")
+                self.cache_data.pop(key0)
             self.cache_data[key] = item
 
     def get(self, key):
