@@ -5,7 +5,8 @@ BaseCaching = __import__('base_caching').BaseCaching
 
 
 class BasicCache(BaseCaching):
-    """"""
+    """ class responsible for adding and getting the item
+    from a cache"""
 
     def __init__(self):
         """ constructor method"""
