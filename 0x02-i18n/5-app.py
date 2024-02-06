@@ -15,6 +15,7 @@ users = {
     4: {"name": "Teletubby", "locale": None, "timezone": "Europe/London"},
 }
 
+
 class Config(object):
     """ flask app config """
     LANGUAGES = ['en', 'fr']
