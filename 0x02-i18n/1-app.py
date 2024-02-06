@@ -21,7 +21,7 @@ app.config.from_object(Config)
 
 @app.route('/')
 def welcome():
-    """ returning welcome to Holberton"""
+    """ returning page '1-index.html' """
     return render_template('1-index.html')
 
 
