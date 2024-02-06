@@ -9,7 +9,7 @@ app = Flask(__name__)
 babel = Babel(app)
 
 
-class Config:
+class Config(object):
     """ flask app config """
     LANGUAGES = ['en', 'fr']
     BABEL_DEFAULT_LOCALE = "en"
@@ -20,7 +20,7 @@ app.config.from_object(Config)
 
 
 @babel.localeselector
-def get_locale() -> str:
+def get_locale():
     """ function that return the best match
     of our supported languages"""
     return request.accept_languages.best_match(app.config['LANGUAGES'])
@@ -31,9 +31,7 @@ def welcome():
     """ returning page '3-index.html '"""
     home_title = gettext("Welcome to Holberton")
     home_header = gettext('Hello world!')
-    return render_template('3-index.html',
-                           home_title=home_title,
-                           home_header=home_header)
+    return render_template('3-index.html', home_title=home_title, home_header=home_header)
 
 
 if __name__ == '__main__':
