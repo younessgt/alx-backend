@@ -26,13 +26,11 @@ def get_locale() -> str:
     return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
-home_title = gettext("Welcome to Holberton")
-home_header = gettext('Hello world!')
-
-
 @app.route('/')
 def welcome():
     """ returning page '3-index.html '"""
+    home_title = gettext("Welcome to Holberton")
+    home_header = gettext('Hello world!')
     return render_template('3-index.html',
                            home_title=home_title,
                            home_header=home_header)
