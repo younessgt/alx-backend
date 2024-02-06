@@ -3,7 +3,7 @@
 Welcome to Holberton” as page title """
 
 from flask import Flask, render_template, request
-from flask_babel import Babel, gettext
+from flask_babel import Babel
 
 app = Flask(__name__)
 babel = Babel(app)
@@ -29,9 +29,7 @@ def get_locale():
 @app.route('/')
 def welcome():
     """ returning page '3-index.html '"""
-    home_title = gettext("Welcome to Holberton")
-    home_header = gettext('Hello world!')
-    return render_template('3-index.html', home_title=home_title, home_header=home_header)
+    return render_template('3-index.html')
 
 
 if __name__ == '__main__':
