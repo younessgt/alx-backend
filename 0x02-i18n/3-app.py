@@ -32,8 +32,8 @@ home_header = gettext('Hello world!')
 
 @app.route('/')
 def welcome():
-    """ returning page '2-index.html '"""
-    return render_template('2-index.html',
+    """ returning page '3-index.html '"""
+    return render_template('3-index.html',
                            home_title=home_title,
                            home_header=home_header)
 
